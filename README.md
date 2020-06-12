@@ -1,49 +1,49 @@
-# README
-# userテーブル
+’’’README
+# usersテーブル
 |Column|Type|Options|
 |------|----|-------|
+|username|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
-|username|string|null: false|
 ### Association
-- has_many :chat
-- has_many :comments
+- has_many :groups
+- has_many :messages
 
-# chatテーブル
+# groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false|
-|member|text|null: false|
+|grouptitle|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :user
-- has_many :comments
-- has_many :chat_tags
-- has_many :tags,  through:  :chat_tags
+- belongs_to :users
+- has_many :messages
+- has_many :groups_menbers
+- has_many :menbers,  through:  :groups_menbers
 
-## tagsテーブル
+## menbersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
 ### Association
-- has_many :chat_tags
-- has_many  :chat,  through:  :chat_tags
+- has_many :groups_menbers
+- has_many  :groups,  through:  :groups_menbers
 
-## chat_tagsテーブル
+## groups_menbersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|chat_id|integer|null: false, foreign_key: true|
-|tag_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+|menber_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :chat
-- belongs_to :tag
+- belongs_to :group
+- belongs_to :menber
 
-# commentテーブル
+# messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|image|text||
+|body|text||
 |user_id|integer|null: false, foreign_key: true|
-|chat_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :chat
 - belongs_to :user
+- belongs_to :group
