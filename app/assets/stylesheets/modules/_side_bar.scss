@@ -1,0 +1,41 @@
+.side-bar{
+  background-color: #2f3e51;
+  width: 300px;
+  height: 100%;
+  float: left;
+  .header{
+    background-color: #253141;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+  &__box{
+   height: 20px;
+   width: 260px;
+   background-color: #253141;
+   color: #ffffff;
+  }
+  &__icon{
+    display: flex;
+  .icon{
+      color: #ffffff;
+    }
+  }
+  }
+}
+
+.groups{
+  color: #ffffff;
+  padding: 0 20px;
+.group{
+  padding: 20px 0 40px;
+ &__name{
+  font-size: 15px;
+  margin: 0 0 5px;
+ &__text{
+   margin-top: 5px;
+   font-size: 11px;
+ }
+ }
+}
+}
