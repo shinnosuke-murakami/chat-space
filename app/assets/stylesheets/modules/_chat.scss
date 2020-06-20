@@ -19,9 +19,9 @@
       color: #999999;
       font-size: 12px;
       display: flex;
-    }
-    }
-   }
+  }
+ }
+}
   .rightside{
     color: #38aef0;
     font-size: 16px;
@@ -32,8 +32,8 @@
     padding:0 20px;
     margin-right: 40px;
     border:1px solid #38aef0
-  }
-  }
+ }
+}
 
   .message{
     padding-top: 100px;
@@ -55,9 +55,9 @@
       &__text{
         color: #434a54;
         margin-bottom: 46px;
-      }
-      }
-      }
+  }
+ }
+}
 
   .form{
     background-color: #dddddd;
@@ -79,7 +79,7 @@
      }
     .hidden{
       display: none;
-    }
+   }
   }
     &__submit{
       margin-left: 15px;
@@ -88,5 +88,5 @@
       color: #ffffff;
       cursor: pointer;
       padding: 0 30px;
-    }
   }
+}
