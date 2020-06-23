@@ -1,3 +1,7 @@
+a{
+  color: white;
+}
+
 .side-bar{
   background-color: #2f3e51;
   width: 300px;
@@ -24,17 +28,17 @@
  }
 }
 
-.groups{
-  color: #ffffff;
+ .groups{
   padding: 0 20px;
-.group{
-  padding: 20px 0 40px;
- &__name{
-  font-size: 15px;
-  margin: 0 0 5px;
- &__text{
-   margin-top: 5px;
-   font-size: 11px;
+  .group{
+   padding: 20px 0 40px;
+   color: #ffffff;
+   &__name{
+    font-size: 15px;
+    margin: 0 0 5px;
+   &__text{
+    margin-top: 5px;
+    font-size: 11px;
    }
   }
  }
