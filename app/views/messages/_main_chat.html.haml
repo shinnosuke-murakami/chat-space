@@ -1,40 +1,26 @@
 .main-chat
- .header
-  .leftside
-   .leftside__title
-    test
-   %ul.leftside__members
-    Member:
-  .rightside
-   .rightside__button
-    =link_to '#' do
-     Edit
- .message
-  .list
-   .list__name
-    masa
-    .list__daily
-     2019/11/20(wed)17:43:01
-   .list__text
-    おはよう！
-   .list__name
-    taka
-    .list__daily
-     2019/11/21(wed)17:43:01
-   .list__text
-    こんばんはー
-   .list__name
-    shin
-    .list__daily
-     2019/11/22(wed)17:43:01
-   .list__text
-    こんにちはー
- .form
-  .set
-   %input.set__text{:placeholder => "type a message"}
-    .set__mask
-     %label.set__mask__image
-      = icon('fa','image',class: 'icon')
-      %input.hidden{type: 'file'}
-   %input.form__submit{type: 'submit', value: 'Send'}
-  
+  .header
+    .leftside
+      .leftside__title
+        = @group.name
+      %ul.leftside__members
+        Member:
+        - @group.users.each do |user|
+          = user.name
+    .rightside
+      .rightside__button
+        = link_to edit_group_path(@group) do
+          Edit
+ 
+  .messages
+    = render @messages
+
+  .form
+    .set
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'set__text', placeholder: 'type a message'
+        .set__mask
+          = f.label :image, class: 'set__mask__image' do
+            = icon('fa','image',class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
