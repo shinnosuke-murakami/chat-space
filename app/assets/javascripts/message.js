@@ -56,7 +56,7 @@ $(function(){
       $('.messages').append(html);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       $('form')[0].reset();
-      // $('.box').animate({'height' : '200px'});
+      $('.box').animate({'height' : '200px'});
       $('.form__submit').prop('disabled', false);
     })
     .fail(function(){
